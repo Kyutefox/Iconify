@@ -11,6 +11,11 @@
 
 > Download Premium SVG Icons and Stickers For Free
 
+## 🚀 Install For Firefox
+  <a href="https://addons.mozilla.org/en-GB/firefox/addon/flat-icons-premium/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search" target="_blank">
+    Click Here
+  </a>
+
 ## 🚀 Install
 
 ```sh
