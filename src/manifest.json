@@ -1,0 +1,29 @@
+{
+  "name"            : "Iconify",
+  "version"         : "1.0.0",
+  "description"     : "Upgrade your designs with our browser extension! Download premium SVG icons and stickers.",
+  "manifest_version": 3,
+  "icons": {
+    "32"  : "./icons/32.png",
+    "48"  : "./icons/48.png",
+    "128" : "./icons/128.png",
+    "256" : "./icons/256.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.flaticon.com/*",
+        "https://iconscout.com/*",
+        "https://icons8.com/*"
+      ],
+      "js": [
+        "./scripts/iconify-jquery.js",
+        "./scripts/iconify-assets.js",
+        "./scripts/iconify-snackbar.js",
+        "./scripts/iconify-main.js"
+      ],
+      "run_at"    : "document_idle",
+      "all_frames": true
+    }
+  ]
+}

@@ -1,47 +1,36 @@
-<h1 align="center">Welcome to Flaticon Premium Crack 👋</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.1-blue.svg?cacheSeconds=2592000" />
-  <a href="#" target="_blank">
-    <img alt="License: GLP" src="https://img.shields.io/badge/License-GLP-yellow.svg" />
-  </a>
-  <a href="https://twitter.com/razoo_choudhary" target="_blank">
-    <img alt="Twitter: razoo_choudhary" src="https://img.shields.io/twitter/follow/razoo_choudhary.svg?style=social" />
-  </a>
-</p>
+<h1>👋 Welcome to Iconify</h1>
 
-> Download Premium SVG Icons and Stickers For Free
+## 🚀 Getting Started
 
-## 🚀 Install For Firefox
-  <a href="https://addons.mozilla.org/en-GB/firefox/addon/flat-icons-premium/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search" target="_blank">
-    Click Here
-  </a>
+<div style="font-size:14px;">
+  <p>Introducing Iconify, the ultimate browser extension for anyone looking to enhance their design projects with high-quality SVG icons. With Iconify, you can easily access and download premium SVG icons from Flaticon,Icons8 and Iconscout one of the largest databases of vector icons available online.</p>
 
-## 🚀 Install
+<p>This extension is supported by Google Chrome, Microsoft Edge and Mozilla Firefox, making it accessible to a wide range of users.</p>
 
-```sh
-- Get the Chrome extension from the Releases section..
-- Add Extension as a Developer in Chrome and Ignore Manifest Warning
-- Reload Flaticon
-- Search for your icon or sticker 
-- Click the icon or sticker to open it.
-- Now HIT Yellow SVG Button to download
-- If you're not already logged in, log in to Flaticon.
-- Give this project your support by staring it.
-- Enjoy Downloading Unlimited SVG Stickers and Icons.
-```
+<p>Whether you are a designer, developer, or just someone who appreciates good design, Iconify is the perfect tool to take your projects to the next level. With its extensive power to download premium icons, you will have access to a vast range of options that will help you create beautiful and professional designs in no time. So why wait? Install Iconify today and start designing like a pro!</p>
+</div>
 
-## 👤 Author
+## 🌏 Supported site
 
-**Raju Choudhary**
+> - [Flaticon](https://flaticon.com)
+> - [Icons8](https://icons8.com)
+> - [Iconscout](https://iconsccout.com/)
 
-* [Twitter](https://twitter.com/razoo\_choudhary)
-* [Github](https://github.com/razoo-choudhary)
-* [LinkedIn](https://linkedin.com/in/razoo-choudhary)
+## 🛠️ Installation
 
-## 🤝 Contributing
+> - <p style="font-size:14px;">Please refer to its documentation for full installation process provided in the useful links section.</p>
 
-Contributions, issues and feature requests are welcome, Feel free to check [issues page](https://github.com/razoo-choudhary/flaticon-premium/issues).
+## 📃 Changelog
 
-## 🤟 Show your support
+> - <p style="font-size:14px;">Please refer to its documentation for full changelog history provided in the useful links section.</p>
 
-Give a ⭐️ if this project helped you!
+## 🔗 Useful Links
+
+> - <a href="https://kyutefox.com/products/iconify-browser-extension">Goto Full Documentation</a>
+> - <a href="https://kyutefox.com/changelog/iconify-browser-extension">Goto Full Changelog</a>
+> - <a href="https://kyutefox.com/">Homepage</a>
+> - <a href="https://github.com/razoo-choudhary">Author Profile</a>
+
+## 🤝 Show Your Support
+
+> - <p style="font-size:14px;">Did this project leave you impressed? Shower some love with a ⭐️!</p>
