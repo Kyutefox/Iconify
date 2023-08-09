@@ -1,6 +1,7 @@
 //Constants
 const LOADING_ICON  =   $(document).find("#iconify-svg-icon").html();
 const USER          =   {logged_in : false, id : 0, premium_token : null, active_on : null};
+let clonedCopySVG = null;
 
 // Stylesheet for loading icon and snackbar
 const snackbarStyle         =   `.snackbar-container{transition:top .5s,right .5s,bottom .5s,left .5s,opacity .5s;font-family:Roboto,sans-serif;font-size:14px;min-height:14px;background-color:#070b0e;position:fixed;display:flex;justify-content:space-between;align-items:center;color:#fff;line-height:22px;padding:18px 24px;bottom:-100px;top:-100px;opacity:0;z-index:9999}.snackbar-container .action{background:inherit;display:inline-block;border:none;font-size:inherit;text-transform:uppercase;color:#4caf50;margin:0 0 0 24px;padding:0;min-width:min-content;cursor:pointer}@media (min-width:640px){.snackbar-container{min-width:288px;max-width:568px;display:inline-flex;border-radius:2px;margin:24px}}.snackbar-pos.bottom-center{top:auto!important;bottom:0;left:50%;transform:translate(-50%,0)}.snackbar-pos.bottom-left{top:auto!important;bottom:0;left:0}.snackbar-pos.bottom-right{top:auto!important;bottom:0;right:0}.snackbar-pos.top-left{bottom:auto!important;top:0;left:0}.snackbar-pos.top-center{bottom:auto!important;top:0;left:50%;transform:translate(-50%,0)}.snackbar-pos.top-right{bottom:auto!important;top:0;right:0}@media (max-width:640px){.snackbar-container{left:0;right:0;width:100%}.snackbar-pos.bottom-center,.snackbar-pos.top-center{left:0;transform:none}}`;
@@ -15,11 +16,37 @@ const downloadIcon = function (text = "", downloadAbleName = "", extension = "sv
 {
     let newAnchorElement = document.createElement("a");
     newAnchorElement.setAttribute("href", "data:text/plain;charset=utf-8," + encodeURIComponent(text));
-    newAnchorElement.setAttribute("download", downloadAbleName + `.${extension}`);
+    newAnchorElement.setAttribute("download", (downloadAbleName + `.${extension}`) ?? "iconify.svg");
     newAnchorElement.style.display = "none";
     document.body.appendChild(newAnchorElement);
     newAnchorElement.click();
     document.body.removeChild(newAnchorElement);
+}
+
+// Create  download json
+const downloadJson = function (data = {}, downloadAbleName = "", extension = "json"){
+    let jsonString = JSON.stringify(data, null, 2);
+    let blob = new Blob([jsonString], { type: 'application/json' });
+    let url = URL.createObjectURL(blob);
+    let link = document.createElement('a');
+    link.href = url;
+    link.download = (downloadAbleName + "." + extension) ?? "iconify.json";
+    document.body.appendChild(link);
+    link.click();
+    URL.revokeObjectURL(url);
+}
+
+//Copy SVG to clipboard
+const copyToClipBoard = function (text, clickedButtonElement, replacer)
+{
+    const tempTextarea = $('<textarea>');
+    tempTextarea.val(text);
+    $('body').append(tempTextarea);
+    tempTextarea.select();
+    document.execCommand('copy');
+    tempTextarea.remove();
+    Snackbar.show({ text : "SVG Copied to clipboard." });
+    clickedButtonElement.html(replacer);
 }
 
 // Check user logged in state
@@ -36,7 +63,6 @@ const activateButtons = function ()
     iconifyPremiumElements.find(".modal-body .hr:first").prevUntil("p.font-md.bold").remove();
 
     $("section[class='profile']").find("div[class='alert alert-warning']").remove();
-    //$(document).find("a[href='/pricing']").remove();
 }
 
 // load content
@@ -141,33 +167,72 @@ window.addEventListener("load", function (){
 })
 
 // Download SVG from Iconscout
-$(document).on("click", ".download-icon", function(e){
+$(document).on("click", ".download-icon, .copyToClipboardIScout", function(e){
     if(!checkLoggedInStatus())
     {
         Snackbar.show({ text : "Please login to download the icon." });
         return;
     }
 
-    let product_id              =   0;
-    let clickedButtonElement    =   $(this);
+    let product_id                  =   0;
+    let clickedButtonElement                 =  $(this);
     clickedButtonElement.html(LOADING_ICON);
-    // Get the product id from the meta tag
     $('meta[data-n-head="ssr"][property="og:product_id"]').each(function(){
-        product_id      = $(this).attr("content");
-        let propEditor  = $(document).find("#pdpColorEditor-" + product_id).html();
-        if(propEditor.length > 0)
-        {
-            setTimeout(function(){
-                downloadIcon(propEditor, product_id);
-                clickedButtonElement.html("Download");
-            }, 3000)
-        }
+        product_id                  =   $(this).attr("content");
     })
+    if(product_id)
+    {
+        let propColorEditor     =   $(document).find("#pdpColorEditor-"     + product_id);
+        let pdpLottieEditor     =   $(document).find("#pdp-lottie-player-"  + product_id);
+        if(propColorEditor.length > 0)
+        {
+            downloadIcon(propColorEditor.html(), product_id);
+            clickedButtonElement.html("Download");
+        }
+        else if(pdpLottieEditor.length > 0)
+        {
+
+            if(clickedButtonElement.hasClass("copyToClipboardIScout"))
+            {
+                const shadowRoot = pdpLottieEditor[0].shadowRoot;
+                const targetDivInShadow = $(shadowRoot).find('#animation');
+                let x = targetDivInShadow.html();
+            }
+            else
+            {
+                let token = extractTokenFromUrls()[0];
+                if(token)
+                {
+                    fetch(`https://d3cb3akjtc97pv.cloudfront.net/lottie/premium/original/${product_id}.json?token=${token}`).then( response => response.json() ).then( data => {
+                        if(data)
+                        {
+                            downloadJson(data, product_id);
+                            clickedButtonElement.html("Download");
+                        }
+                    })
+                }
+            }
+        }
+        else
+        {
+            Snackbar.show({text : "Unsupported format or icon !"})
+            clickedButtonElement.html("Download");
+        }
+    }
 });
 
 
+// Extract Token
+function extractTokenFromUrls() {
+    let entries = window.performance.getEntries();
+    return entries.filter(entry => entry.initiatorType === 'xmlhttprequest' || entry.initiatorType === 'fetch').filter(entry => entry.name.includes('?token=')).map(entry => {
+        let url = new URL(entry.name);
+        return url.searchParams.get('token');
+    }) ?? [];
+}
+
 // Download SVG from Flaticon
-$(document).on("click", ".btn-svg", function(e){
+$(document).on("click", ".btn-svg, .copysvg--button", function(e){
     if(!checkLoggedInStatus())
     {
         Snackbar.show({ text : "Please login to download the icon." });
@@ -197,8 +262,15 @@ $(document).on("click", ".btn-svg", function(e){
         fetch(`https://www.flaticon.com/editor/icon/svg/${iconId}?type=${iconType}&_auth_premium_token=${USER.premium_token}`).then( response => response.json() ).then( data => {
             fetch(data.url).then((res) => {
                 res.text().then((text) => {
-                    downloadIcon(text, `${iconName}`)
-                    clickedButtonElement.html("SVG");
+                    if (clickedButtonElement.hasClass("btn-svg"))
+                    {
+                        downloadIcon(text, `${iconName}`)
+                        clickedButtonElement.html("SVG");
+                    }
+                    else
+                    {
+                        copyToClipBoard(text, clickedButtonElement, "Copy SVG");
+                    }
                 })
             });
         })
