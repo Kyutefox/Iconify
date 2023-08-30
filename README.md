@@ -3,7 +3,7 @@
 ## 🚀 Getting Started
 
 <div style="font-size:14px;">
-  <p>Introducing Iconify, the ultimate browser extension for anyone looking to enhance their design projects with high-quality SVG icons. With Iconify, you can easily access and download premium SVG icons from Flaticon,Icons8 and Iconscout one of the largest databases of vector icons available online.</p>
+  <p>Introducing Iconify, the ultimate browser extension for anyone looking to enhance their design projects with high-quality SVG icons. With Iconify, you can easily access and download premium SVG icons from Flaticon,Icons8,FontAwesome and Iconscout one of the largest databases of vector icons available online.</p>
 
 <p>This extension is supported by Google Chrome, Microsoft Edge and Mozilla Firefox, making it accessible to a wide range of users.</p>
 
@@ -12,6 +12,7 @@
 
 ## 🌏 Supported site
 
+> - [FontAwesom](https://fontawesome.com/)
 > - [Flaticon](https://flaticon.com)
 > - [Icons8](https://icons8.com)
 > - [Iconscout](https://iconsccout.com/)
