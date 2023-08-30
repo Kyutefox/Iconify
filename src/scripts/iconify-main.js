@@ -11,6 +11,52 @@ const styleElement = document.createElement("style");
 styleElement.textContent = snackbarStyle + bounceCss;
 document.head.appendChild(styleElement);
 
+const initButtonFae = () => {
+    // Create the button element
+   const button = $('<span>', {
+        id: 'getFontawesomeCdn',
+        class: "position-relative",
+        text: 'Generate Premium Icon CDN Link',
+        click: function() {
+            let versionSelector = $(document).find("#choose_aversionoffontawesome").val() ?? "6.4.2";
+            let link = `https://site-assets.fontawesome.com/releases/v${versionSelector}/css/all.css`
+            const textToCopy = link;
+            const tempInput = $('<input>');
+            $(document).find("body").append(tempInput);
+            tempInput.val(textToCopy).select();
+            document.execCommand('copy');
+            tempInput.remove();
+            Snackbar.show({ text : "CDN link copied to clipboard" , showAction : false})
+        }
+    });
+
+    // Set the button's position and styles
+    button.css({
+        position: 'fixed',
+        bottom: '20px',
+        right: '20px',
+        zIndex: '999',
+        padding: "10px 20px",
+        background: "#007bff",
+        color: "#fff",
+        border: "none",
+        cursor: "pointer",
+        borderRadius: "4px", /* Added border radius */
+    });
+
+
+    // Append the button to the container
+    var container = $('body');
+    container.append(button);
+}
+
+const initFontAwesome = () => {
+    let button = $(document).find("#fontAwesomeSVGDownload");
+    if(button.length < 1){
+        $(document).find(".icon-actions").append("<button class='position-relative' id='fontAwesomeSVGDownload' style='top: calc(0.375em) * -1) !important;width: 100% !important;'>Download SVG</button>");
+    }
+}
+
 // Create download
 const downloadIcon = function (text = "", downloadAbleName = "", extension = "svg")
 {
@@ -67,7 +113,6 @@ const activateButtons = function ()
 
 // load content
 window.addEventListener("load", function (){
-
     // Observer to observe the content changes on page.
     let targetNode  =   document.body;
     let observer    =   new MutationObserver(function (mutations)
@@ -120,6 +165,22 @@ window.addEventListener("load", function (){
         downloadModalFooterElement.after(icons8DownloadButton);
     });
 
+    // Download SVG from Fontawesome
+    $(document).on("click","#fontAwesomeSVGDownload", function(){
+        let versionSelector = $(document).find("#choose_aversionoffontawesome").val() ?? "6.4.2";
+        let url         = `https://site-assets.fontawesome.com/releases/v${versionSelector}/svgs/`;
+        const name                    =   $(document).find(".icon-code-snippet.codeblock-tabbed.margin-bottom-xl").attr("id") ?? "";
+        const iconFamily          =   $(document).find("#icon_family").val() ?? "classic";
+        const activeButton            =   $("#icon_style").find("button.active");
+        const iconStyle               =   activeButton.attr("aria-label") || "solid";
+        url += (iconFamily.toLowerCase() !== "classic" ? iconFamily.toLowerCase() + "-" : "") + iconStyle.toLowerCase() + "/" + name + ".svg";
+        fetch(url).then((res) => {
+            res.text().then((text) => {
+                downloadIcon(text, name)
+            })
+        });
+    })
+
     // Download SVG from Icons8
     $(document).on("click", ".download-svg-ry", function(e){
         if(!checkLoggedInStatus())
@@ -164,6 +225,18 @@ window.addEventListener("load", function (){
             Snackbar.show({ text : "Something went wrong while downloading the icon, Hot reload the page." });
         }
     })
+    initFontAwesome();
+    $(document).click();
+
+    if (window.location.href.startsWith('https://fontawesome.com/')){
+        initButtonFae();
+    }
+})
+
+
+
+$(document).on("click", function (){
+    initFontAwesome();
 })
 
 // Download SVG from Iconscout
