@@ -12,14 +12,18 @@
 
 ## 🌏 Supported site
 
-> - [FontAwesom](https://fontawesome.com/)
+> - [FontAwesome](https://fontawesome.com/)
 > - [Flaticon](https://flaticon.com)
 > - [Icons8](https://icons8.com)
-> - [Iconscout](https://iconsccout.com/)
+> - [Iconscout](https://iconscout.com/)
 
 ## 🛠️ Installation
 
 > - <p style="font-size:14px;">Please refer to its documentation for full installation process provided in the useful links section.</p>
+
+## ❗❗ Troubleshoot
+
+> - <p style="font-size:14px;">If you face any error while using Iconify try CTRL + R to hard reload once the pages loads.</p>
 
 ## 📃 Changelog
 
