@@ -159,10 +159,17 @@ window.addEventListener("load", function (){
     observer.observe(targetNode, config);
 
     // Add download SVG button in Icons8 modal after clicking the original available download button
-    let icons8DownloadButton = '<center><button style="margin-bottom: 25px;width: 93%;" class="download-svg-ry i8-button--primary i8-button--large i8-button"><div data-v-969e794c="" class="dim__primary-btn-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1C9 0.447715 9.44771 0 10 0C10.5523 0 11 0.447715 11 1V11.0703L14.8632 7.20711C15.2537 6.81658 15.8869 6.81658 16.2774 7.20711L16.3632 7.29289C16.7537 7.68342 16.7537 8.31658 16.3632 8.70711L10 15.0703L3.63679 8.70711C3.24627 8.31658 3.24627 7.68342 3.63679 7.29289L3.72258 7.20711C4.11311 6.81658 4.74627 6.81658 5.13679 7.20711L9 11.0703V1Z" fill="#88DD9F"></path><path d="M0 19C0 18.4477 0.447716 18 1 18H19C19.5523 18 20 18.4477 20 19C20 19.5523 19.5523 20 19 20H1C0.447715 20 0 19.5523 0 19Z" fill="#88DD9F"></path></svg></div> Download </button></center>';
-    $(document).on("click", ".app-accordion2__main-buttons .i8-button--primary.i8-button--large.i8-button", function (e) {
-        let downloadModalFooterElement = $(document).find(".dim__footer");
-        downloadModalFooterElement.after(icons8DownloadButton);
+    let icons8DownloadButton  ='' +
+        '<button class="download-svg-ry i8-button--primary i8-button--large i8-button">' +
+        '<div class="i8-icon i8-button__icon i8-button__icon--left i8-button__icon i8-button__icon--left" style="--icon-size: 24px;"><svg class="i8-icon-path" preserveAspectRatio="none"><path d="M11.9883 2.98935C11.7896 2.99245 11.6002 3.07432 11.4617 3.21696C11.3233 3.35959 11.2472 3.55135 11.25 3.75009V14.4395L9.53029 12.7198C9.46038 12.6478 9.37674 12.5906 9.28431 12.5515C9.19188 12.5124 9.09255 12.4923 8.9922 12.4923C8.84294 12.4923 8.69709 12.5369 8.5733 12.6203C8.44951 12.7037 8.35342 12.8221 8.29731 12.9604C8.24121 13.0987 8.22765 13.2507 8.25837 13.3967C8.28908 13.5428 8.36268 13.6764 8.46974 13.7804L11.4697 16.7804C11.6104 16.921 11.8011 16.9999 12 16.9999C12.1989 16.9999 12.3896 16.921 12.5303 16.7804L15.5303 13.7804C15.6023 13.7113 15.6597 13.6285 15.6993 13.5369C15.7389 13.4453 15.7598 13.3467 15.7608 13.2469C15.7619 13.1472 15.7429 13.0482 15.7052 12.9558C15.6675 12.8634 15.6117 12.7795 15.5412 12.7089C15.4706 12.6384 15.3867 12.5826 15.2943 12.5449C15.2019 12.5072 15.103 12.4883 15.0032 12.4893C14.9034 12.4903 14.8048 12.5112 14.7132 12.5508C14.6216 12.5904 14.5389 12.6478 14.4697 12.7198L12.75 14.4395V3.75009C12.7515 3.64971 12.7327 3.55006 12.6949 3.45705C12.6572 3.36403 12.6011 3.27955 12.5301 3.20861C12.459 3.13767 12.3745 3.0817 12.2814 3.04404C12.1884 3.00638 12.0887 2.98778 11.9883 2.98935ZM3.7383 15.4893C3.53956 15.4925 3.35017 15.5743 3.21174 15.717C3.07332 15.8596 2.99717 16.0513 3.00002 16.2501V18.2501C3.00002 19.76 4.24013 21.0001 5.75002 21.0001H18.25C19.7599 21.0001 21 19.76 21 18.2501V16.2501C21.0014 16.1507 20.9831 16.052 20.946 15.9598C20.9089 15.8676 20.8539 15.7836 20.7841 15.7129C20.7144 15.6421 20.6312 15.5859 20.5395 15.5475C20.4478 15.5092 20.3494 15.4894 20.25 15.4894C20.1506 15.4894 20.0522 15.5092 19.9605 15.5475C19.8688 15.5859 19.7857 15.6421 19.7159 15.7129C19.6461 15.7836 19.5911 15.8676 19.554 15.9598C19.517 16.052 19.4986 16.1507 19.5 16.2501V18.2501C19.5 18.9492 18.9491 19.5001 18.25 19.5001H5.75002C5.0509 19.5001 4.50002 18.9492 4.50002 18.2501V16.2501C4.50146 16.1497 4.48273 16.0501 4.44495 15.957C4.40717 15.864 4.3511 15.7796 4.28006 15.7086C4.20903 15.6377 4.12447 15.5817 4.03141 15.544C3.93835 15.5064 3.83868 15.4878 3.7383 15.4893Z" style="height: 100%;"></path></svg></div>Iconify Download SVG' +
+        '</button>';
+    $(document).on("click", ".app-grid-icon", function (e) {
+        let downloadModalFooterElement  =   $(document).find(".app-accordion2__main-buttons");
+        let existingButton              =   $(document).find(".download-svg-ry");
+        if(existingButton.length < 1)
+        {
+            downloadModalFooterElement.prepend(icons8DownloadButton)
+        }
     });
 
     // Download SVG from Fontawesome
@@ -191,33 +198,44 @@ window.addEventListener("load", function (){
         try
         {
             let clickedButtonElement    =   $(this);
-            let idElement               =   $("#dim__preview .dim__preview-icons .dim__preview-icon-wrapper");
-            let value                   =   idElement.attr("id");
-            if(value)
+            let idElement               =   $(document).find(".i8-link.app-accordion2__name.app-accordion2__name");
+            let str                   =   idElement.attr("href");
+            if(str)
             {
-                value   =   value.substring(1);
-                value   =   value.substring(0, value.lastIndexOf("-"));
-                $.ajax({
-                    url         :   `https://api-icons.icons8.com/siteApi/icons/icon?id=${value}&info=true&language=en-US&svg=true`,
-                    method      :   "GET",
-                    dataType    :   "JSON",
-                    beforeSend  :   function (){
-                        clickedButtonElement.html(LOADING_ICON);
-                    },
-                    success     :   function (response){
-                        const iconName  = response.icon.name    ?? value;
-                        const svg       = response.icon.svg     ?? "";
-                        if(svg.length > 0)
-                        {
-                            downloadIcon(atob(svg), iconName);
+
+                let value;
+                const regex = /\/icon\/([^\/]+)/;
+                const match = str.match(regex);
+
+                if (match) {
+                     value = match[1];
+                } else {
+                    value = "";
+                }
+                if(value)
+                {
+                    $.ajax({
+                        url         :   `https://api-icons.icons8.com/siteApi/icons/icon?id=${value}&info=true&language=en-US&svg=true`,
+                        method      :   "GET",
+                        dataType    :   "JSON",
+                        beforeSend  :   function (){
+                            clickedButtonElement.html(LOADING_ICON);
+                        },
+                        success     :   function (response){
+                            const iconName  = response.icon.name    ?? value;
+                            const svg       = response.icon.svg     ?? "";
+                            if(svg.length > 0)
+                            {
+                                downloadIcon(atob(svg), iconName);
+                            }
+                            else
+                            {
+                                Snackbar.show({ text : "Icon / Asset is not available in SVG format."});
+                            }
+                            clickedButtonElement.html('<div class="i8-icon i8-button__icon i8-button__icon--left i8-button__icon i8-button__icon--left" style="--icon-size: 24px;"><svg class="i8-icon-path" preserveAspectRatio="none"><path d="M11.9883 2.98935C11.7896 2.99245 11.6002 3.07432 11.4617 3.21696C11.3233 3.35959 11.2472 3.55135 11.25 3.75009V14.4395L9.53029 12.7198C9.46038 12.6478 9.37674 12.5906 9.28431 12.5515C9.19188 12.5124 9.09255 12.4923 8.9922 12.4923C8.84294 12.4923 8.69709 12.5369 8.5733 12.6203C8.44951 12.7037 8.35342 12.8221 8.29731 12.9604C8.24121 13.0987 8.22765 13.2507 8.25837 13.3967C8.28908 13.5428 8.36268 13.6764 8.46974 13.7804L11.4697 16.7804C11.6104 16.921 11.8011 16.9999 12 16.9999C12.1989 16.9999 12.3896 16.921 12.5303 16.7804L15.5303 13.7804C15.6023 13.7113 15.6597 13.6285 15.6993 13.5369C15.7389 13.4453 15.7598 13.3467 15.7608 13.2469C15.7619 13.1472 15.7429 13.0482 15.7052 12.9558C15.6675 12.8634 15.6117 12.7795 15.5412 12.7089C15.4706 12.6384 15.3867 12.5826 15.2943 12.5449C15.2019 12.5072 15.103 12.4883 15.0032 12.4893C14.9034 12.4903 14.8048 12.5112 14.7132 12.5508C14.6216 12.5904 14.5389 12.6478 14.4697 12.7198L12.75 14.4395V3.75009C12.7515 3.64971 12.7327 3.55006 12.6949 3.45705C12.6572 3.36403 12.6011 3.27955 12.5301 3.20861C12.459 3.13767 12.3745 3.0817 12.2814 3.04404C12.1884 3.00638 12.0887 2.98778 11.9883 2.98935ZM3.7383 15.4893C3.53956 15.4925 3.35017 15.5743 3.21174 15.717C3.07332 15.8596 2.99717 16.0513 3.00002 16.2501V18.2501C3.00002 19.76 4.24013 21.0001 5.75002 21.0001H18.25C19.7599 21.0001 21 19.76 21 18.2501V16.2501C21.0014 16.1507 20.9831 16.052 20.946 15.9598C20.9089 15.8676 20.8539 15.7836 20.7841 15.7129C20.7144 15.6421 20.6312 15.5859 20.5395 15.5475C20.4478 15.5092 20.3494 15.4894 20.25 15.4894C20.1506 15.4894 20.0522 15.5092 19.9605 15.5475C19.8688 15.5859 19.7857 15.6421 19.7159 15.7129C19.6461 15.7836 19.5911 15.8676 19.554 15.9598C19.517 16.052 19.4986 16.1507 19.5 16.2501V18.2501C19.5 18.9492 18.9491 19.5001 18.25 19.5001H5.75002C5.0509 19.5001 4.50002 18.9492 4.50002 18.2501V16.2501C4.50146 16.1497 4.48273 16.0501 4.44495 15.957C4.40717 15.864 4.3511 15.7796 4.28006 15.7086C4.20903 15.6377 4.12447 15.5817 4.03141 15.544C3.93835 15.5064 3.83868 15.4878 3.7383 15.4893Z" style="height: 100%;"></path></svg></div>Iconify Download SVG')
                         }
-                        else
-                        {
-                            Snackbar.show({ text : "Icon / Asset is not available in SVG format."});
-                        }
-                        clickedButtonElement.html('<div data-v-969e794c="" class="dim__primary-btn-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1C9 0.447715 9.44771 0 10 0C10.5523 0 11 0.447715 11 1V11.0703L14.8632 7.20711C15.2537 6.81658 15.8869 6.81658 16.2774 7.20711L16.3632 7.29289C16.7537 7.68342 16.7537 8.31658 16.3632 8.70711L10 15.0703L3.63679 8.70711C3.24627 8.31658 3.24627 7.68342 3.63679 7.29289L3.72258 7.20711C4.11311 6.81658 4.74627 6.81658 5.13679 7.20711L9 11.0703V1Z" fill="#88DD9F"></path><path d="M0 19C0 18.4477 0.447716 18 1 18H19C19.5523 18 20 18.4477 20 19C20 19.5523 19.5523 20 19 20H1C0.447715 20 0 19.5523 0 19Z" fill="#88DD9F"></path></svg></div> Download')
-                    }
-                })
+                    })
+                }
             }
         }
         catch(e)
