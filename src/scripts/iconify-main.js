@@ -150,8 +150,11 @@ window.addEventListener("load", function (){
         }
 
         // Replace the download button with SVG download button in Iconscout
-        let iconScoutPremiumDownloadButton = $("<button class='download-icon btn btn-lg btn-primary btn-block'>").text("Download").removeAttr("href");
-        $("a[href='/pricing'][class='btn btn-lg btn-primary btn-block']").replaceWith(iconScoutPremiumDownloadButton);
+        let iconScoutPremiumDownloadButton =
+            $(`<button type="button" class="btn btn-primary has-icon w-100 btn-lg download-icon">Download</button>`).text("Download").removeAttr("href");
+        const button = $("button[class*='btn'][class*='dropdown-toggle'][class*='btn-primary'][class*='w-100'][class*='btn-lg'][class*='has-icon'][class*='dropdown-toggle-no-caret']");
+        button.next("ul").remove();
+        button.replaceWith(iconScoutPremiumDownloadButton);
     });
 
     // Options for the observer (which mutations to observe)
