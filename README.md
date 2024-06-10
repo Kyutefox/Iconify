@@ -34,7 +34,7 @@
 > - <a href="https://kyutefox.com/products/iconify-browser-extension">Goto Full Documentation</a>
 > - <a href="https://kyutefox.com/changelog/iconify-browser-extension">Goto Full Changelog</a>
 > - <a href="https://kyutefox.com/">Homepage</a>
-> - <a href="https://github.com/razoo-choudhary">Author Profile</a>
+> - <a href="https://github.com/MrJukeman">Author Profile</a>
 
 ## 🤝 Show Your Support
 
