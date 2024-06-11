@@ -26,6 +26,23 @@ The Ultimate Browser Extension for **QUALITY** SVG Icons
 
 </div>
 
+## 👍 Table of Contents:
+
+- 🚀 [Getting Started](https://github.com/Zemerik/Iconify/edit/main/README.md#-getting-started)
+- 🌎 [Supported Sites](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-supported-sites)
+- 🛠️ [Installation](https://github.com/Zemerik/Iconify?tab=readme-ov-file#%EF%B8%8F-installation)
+    - [Chrome](https://github.com/Zemerik/Iconify?tab=readme-ov-file#%EF%B8%8F-installation)
+    - [Firefox](https://github.com/Zemerik/Iconify?tab=readme-ov-file#%EF%B8%8F-installation)
+    - [Microsoft Edge](https://github.com/Zemerik/Iconify?tab=readme-ov-file#%EF%B8%8F-installation)
+    - [How to Use?](https://github.com/Zemerik/Iconify?tab=readme-ov-file#%EF%B8%8F-installation)
+- ❗❗ [Troubleshoot](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-troubleshoot)
+- 📃 [Changelog](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-changelog)
+    - [1.0.0 - The Beggining](https://github.com/Zemerik/Iconify?tab=readme-ov-file#april-13-2023-100-inconify---the-beggining)
+    - [1.0.1 - Updates & Fixes](https://github.com/Zemerik/Iconify?tab=readme-ov-file#august-09-2024-101-update--fixes)
+    - [1.0.2 - Updates](https://github.com/Zemerik/Iconify?tab=readme-ov-file#august-09-2024-101-update--fixes)
+- 🔗 [Useful Links](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-useful-links)
+- 🤝 [Show Your Support](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-show-your-support)
+
 ## 🚀 Getting Started
 
 <div style="font-size:14px;">
@@ -78,7 +95,7 @@ Want more sites? Create an [Issue](https://github.com/Kyutefox/Iconify/issues) a
 
 ## 🛠️ Installation
 
-<p style="font-size:14px;">Please refer to its documentation for full installation process provided in the useful links section.</p>
+- Installation Guide can be found on the Website [here](https://kyutefox.com/products/iconify-browser-extension#installation-1)
 
 > [!Caution]
 > Before installing and using Iconify, it is important to uninstall the "Flaticon premium" version of this extension and clear your cache to prevent any conflicts or unresponsiveness.
@@ -152,7 +169,12 @@ Want more sites? Create an [Issue](https://github.com/Kyutefox/Iconify/issues) a
 ```
 
 
-### Is it safe ?
+<details close>
+  <summary>
+    Is it Safe?
+  </summary>
+
+<br>
 
 If you're concerned about the safety of using Iconify, you'll be pleased to know that the extension is 100% safe and secure to use. The extension does not track any of your browser data or any other personal information, so you can browse and download premium SVG icons with complete peace of mind.
 
@@ -163,13 +185,16 @@ Aside from this process, the extension does not do anything else that might rais
 
 In conclusion, Iconify is a safe and secure extension that provides premium SVG icons for your design projects. With its user-friendly interface and seamless integration with Flaticon's server, you can browse, search, and download premium icons with ease and confidence.
 
+</details>
+
 ## ❗❗ Troubleshoot
 
-> - <p style="font-size:14px;">If you face any error while using Iconify try CTRL + R to hard reload once the pages loads.</p>
+> [!Important]
+> If you face any error while using Iconify try CTRL + R to hard reload once the pages loads.
 
 ## 📃 Changelog
 
-> - <p style="font-size:14px;">Please refer to its documentation for full changelog history provided in the useful links section.</p>
+- Full Changelog can be found on the Website [here](https://kyutefox.com/changelog/iconify-browser-extension). 
 
 ### August 30, 2024 - 1.0.2 (Update)
 
@@ -195,7 +220,7 @@ In conclusion, Iconify is a safe and secure extension that provides premium SVG 
 
     - Improved performance in IconScout.
 
-### April 13, 2023, 1.0.1 (Inconify - The Beggining)
+### April 13, 2023, 1.0.0 (Inconify - The Beggining)
 
 > - New:
 
@@ -228,3 +253,4 @@ In conclusion, Iconify is a safe and secure extension that provides premium SVG 
 ## 🤝 Show Your Support
 
 > - <p style="font-size:14px;">Did this project leave you impressed? Shower some love with a ⭐️!</p>
+
