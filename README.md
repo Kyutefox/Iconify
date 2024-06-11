@@ -28,7 +28,7 @@ The Ultimate Browser Extension for **QUALITY** SVG Icons
 
 ## 👍 Table of Contents:
 
-- 🚀 [Getting Started](https://github.com/Zemerik/Iconify/edit/main/README.md#-getting-started)
+- 🚀 [Getting Started](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-getting-started)
 - 🌎 [Supported Sites](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-supported-sites)
 - 🛠️ [Installation](https://github.com/Zemerik/Iconify?tab=readme-ov-file#%EF%B8%8F-installation)
     - [Chrome](https://github.com/Zemerik/Iconify?tab=readme-ov-file#%EF%B8%8F-installation)
