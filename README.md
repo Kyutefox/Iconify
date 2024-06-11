@@ -171,6 +171,53 @@ In conclusion, Iconify is a safe and secure extension that provides premium SVG 
 
 > - <p style="font-size:14px;">Please refer to its documentation for full changelog history provided in the useful links section.</p>
 
+### August 30, 2024 - 1.0.2 (Update)
+
+> - New:
+
+    - Download any icon as SVG ( Font Awesome )
+
+> - New:
+
+    - Generate Premium Font Awesome CDN and use icon directly
+
+### August 09, 2024, 1.0.1 (Update & Fixes)
+
+> - New:
+
+    - Added Animated Lottie Download for (IconScout) in JSON.
+
+    - Added Copy SVG button to copy code directly (FlatIcon).
+
+> - Update:
+
+    - Added Error Message for non-supported icons.
+
+    - Improved performance in IconScout.
+
+### April 13, 2023, 1.0.1 (Inconify - The Beggining)
+
+> - New:
+
+    - Added popup message for error.
+
+    - Added animations to download button.
+
+    - Added custom download button.
+
+    - Added support for IconScout.
+
+    - Added support for Icons8.
+
+    - Added support for Microsoft Edge.
+
+    - All new Iconify known as Flaticon Premium.
+
+> - Update:
+
+    - Updated to manifest version 3.0
+
+    - Updated from server dependent to local.
 ## 🔗 Useful Links
 
 > - <a href="https://kyutefox.com/products/iconify-browser-extension">Goto Full Documentation</a>
