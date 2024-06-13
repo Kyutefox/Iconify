@@ -36,10 +36,6 @@ The Ultimate Browser Extension for **QUALITY** SVG Icons
     - [Microsoft Edge](https://github.com/Zemerik/Iconify?tab=readme-ov-file#microsoft-edge)
     - [How to Use?](https://github.com/Zemerik/Iconify?tab=readme-ov-file#how-to-use)
 - ❗❗ [Troubleshoot](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-troubleshoot)
-- 📃 [Changelog](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-changelog)
-    - [1.0.0 - The Beggining](https://github.com/Zemerik/Iconify?tab=readme-ov-file#april-13-2023-100-inconify---the-beggining)
-    - [1.0.1 - Updates & Fixes](https://github.com/Zemerik/Iconify?tab=readme-ov-file#august-09-2024-101-update--fixes)
-    - [1.0.2 - Updates](https://github.com/Zemerik/Iconify?tab=readme-ov-file#august-09-2024-101-update--fixes)
 - 🔗 [Useful Links](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-useful-links)
 - 🤝 [Show Your Support](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-show-your-support)
 
@@ -194,55 +190,8 @@ In conclusion, Iconify is a safe and secure extension that provides premium SVG 
 
 ## 📃 Changelog
 
-- Full Changelog can be found on the Website [here](https://kyutefox.com/changelog/iconify-browser-extension). 
+- Full Changelog can be found on the Website [here](https://kyutefox.com/changelog/iconify-browser-extension) or in the [Changelog file](https://github.com/Zemerik/Iconify/blob/main/CHANGELOG.md)
 
-### August 30, 2024 - 1.0.2 (Update)
-
-> - New:
-
-    - Download any icon as SVG ( Font Awesome )
-
-> - New:
-
-    - Generate Premium Font Awesome CDN and use icon directly
-
-### August 09, 2024, 1.0.1 (Update & Fixes)
-
-> - New:
-
-    - Added Animated Lottie Download for (IconScout) in JSON.
-
-    - Added Copy SVG button to copy code directly (FlatIcon).
-
-> - Update:
-
-    - Added Error Message for non-supported icons.
-
-    - Improved performance in IconScout.
-
-### April 13, 2023, 1.0.0 (Inconify - The Beggining)
-
-> - New:
-
-    - Added popup message for error.
-
-    - Added animations to download button.
-
-    - Added custom download button.
-
-    - Added support for IconScout.
-
-    - Added support for Icons8.
-
-    - Added support for Microsoft Edge.
-
-    - All new Iconify known as Flaticon Premium.
-
-> - Update:
-
-    - Updated to manifest version 3.0
-
-    - Updated from server dependent to local.
 ## 🔗 Useful Links
 
 > - <a href="https://kyutefox.com/products/iconify-browser-extension">Full Documentation</a>
