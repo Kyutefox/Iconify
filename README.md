@@ -31,10 +31,10 @@ The Ultimate Browser Extension for **QUALITY** SVG Icons
 - 🚀 [Getting Started](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-getting-started)
 - 🌎 [Supported Sites](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-supported-sites)
 - 🛠️ [Installation](https://github.com/Zemerik/Iconify?tab=readme-ov-file#%EF%B8%8F-installation)
-    - [Chrome](https://github.com/Zemerik/Iconify?tab=readme-ov-file#%EF%B8%8F-installation)
-    - [Firefox](https://github.com/Zemerik/Iconify?tab=readme-ov-file#%EF%B8%8F-installation)
-    - [Microsoft Edge](https://github.com/Zemerik/Iconify?tab=readme-ov-file#%EF%B8%8F-installation)
-    - [How to Use?](https://github.com/Zemerik/Iconify?tab=readme-ov-file#%EF%B8%8F-installation)
+    - [Chrome](https://github.com/Zemerik/Iconify?tab=readme-ov-file#chrome-browser)
+    - [Firefox](https://github.com/Zemerik/Iconify?tab=readme-ov-file#firefox-browser)
+    - [Microsoft Edge](https://github.com/Zemerik/Iconify?tab=readme-ov-file#microsoft-edge)
+    - [How to Use?](https://github.com/Zemerik/Iconify?tab=readme-ov-file#how-to-use)
 - ❗❗ [Troubleshoot](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-troubleshoot)
 - 📃 [Changelog](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-changelog)
     - [1.0.0 - The Beggining](https://github.com/Zemerik/Iconify?tab=readme-ov-file#april-13-2023-100-inconify---the-beggining)
@@ -245,8 +245,8 @@ In conclusion, Iconify is a safe and secure extension that provides premium SVG 
     - Updated from server dependent to local.
 ## 🔗 Useful Links
 
-> - <a href="https://kyutefox.com/products/iconify-browser-extension">Goto Full Documentation</a>
-> - <a href="https://kyutefox.com/changelog/iconify-browser-extension">Goto Full Changelog</a>
+> - <a href="https://kyutefox.com/products/iconify-browser-extension">Full Documentation</a>
+> - <a href="https://kyutefox.com/changelog/iconify-browser-extension">Full Changelog</a>
 > - <a href="https://kyutefox.com/">Homepage</a>
 > - <a href="https://github.com/razoo-choudhary">Author Profile</a>
 
