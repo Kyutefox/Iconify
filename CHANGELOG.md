@@ -1,4 +1,6 @@
-## 📃 Changelog
+<h1 align = "center">
+    📃CHANGELOG
+</h1>
 
 - Full Changelog can be found on the Website [here](https://kyutefox.com/changelog/iconify-browser-extension). 
 
