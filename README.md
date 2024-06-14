@@ -28,16 +28,16 @@ The Ultimate Browser Extension for **QUALITY** SVG Icons
 
 ## 👍 Table of Contents:
 
-- 🚀 [Getting Started](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-getting-started)
-- 🌎 [Supported Sites](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-supported-sites)
-- 🛠️ [Installation](https://github.com/Zemerik/Iconify?tab=readme-ov-file#%EF%B8%8F-installation)
-    - [Chrome](https://github.com/Zemerik/Iconify?tab=readme-ov-file#chrome-browser)
-    - [Firefox](https://github.com/Zemerik/Iconify?tab=readme-ov-file#firefox-browser)
-    - [Microsoft Edge](https://github.com/Zemerik/Iconify?tab=readme-ov-file#microsoft-edge)
-    - [How to Use?](https://github.com/Zemerik/Iconify?tab=readme-ov-file#how-to-use)
-- ❗❗ [Troubleshoot](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-troubleshoot)
-- 🔗 [Useful Links](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-useful-links)
-- 🤝 [Show Your Support](https://github.com/Zemerik/Iconify?tab=readme-ov-file#-show-your-support)
+- 🚀 [Getting Started](https://github.com/Kyutefox/Iconify?tab=readme-ov-file#-getting-started)
+- 🌎 [Supported Sites](https://github.com/Kyutefox/Iconify?tab=readme-ov-file#-supported-sites)
+- 🛠️ [Installation](https://github.com/Kyutefox/Iconify?tab=readme-ov-file#%EF%B8%8F-installation)
+    - [Chrome](https://github.com/Kyutefox/Iconify?tab=readme-ov-file#chrome-browser)
+    - [Firefox](https://github.com/Kyutefox/Iconify?tab=readme-ov-file#firefox-browser)
+    - [Microsoft Edge](https://github.com/Kyutefox/Iconify?tab=readme-ov-file#microsoft-edge)
+    - [How to Use?](https://github.com/Kyutefox/Iconify?tab=readme-ov-file#how-to-use)
+- ❗❗ [Troubleshoot](https://github.com/Kyutefox/Iconify?tab=readme-ov-file#-troubleshoot)
+- 🔗 [Useful Links](https://github.com/Kyutefox/Iconify?tab=readme-ov-file#-useful-links)
+- 🤝 [Show Your Support](https://github.com/Kyutefox/Iconify?tab=readme-ov-file#-show-your-support)
 
 ## 🚀 Getting Started
 
