@@ -21,7 +21,7 @@ The Ultimate Browser Extension for **QUALITY** SVG Icons
   </a>
 </p>
 
-![image](https://github.com/Zemerik/Iconify/assets/133865660/d753c1bf-8ae0-4ed1-b66b-7c322369156a)
+![image](https://github.com/MrJukeman/Iconify/assets/web.png)
 
 
 </div>
