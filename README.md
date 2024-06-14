@@ -21,8 +21,7 @@ The Ultimate Browser Extension for **QUALITY** SVG Icons
   </a>
 </p>
 
-![image]([https://github.com/MrJukeman/Iconify/assets/web.png](https://raw.githubusercontent.com/Kyutefox/Iconify/main/assets/web.png))
-
+![image](https://raw.githubusercontent.com/Kyutefox/Iconify/main/assets/web.png)
 
 </div>
 
