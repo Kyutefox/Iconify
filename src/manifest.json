@@ -1,6 +1,6 @@
 {
   "name"            : "Iconify",
-  "version"         : "1.0.5",
+  "version"         : "1.0.6",
   "description"     : "Upgrade your designs with our browser extension! Download premium SVG icons and stickers.",
   "manifest_version": 3,
   "icons": {

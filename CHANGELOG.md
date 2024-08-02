@@ -4,7 +4,14 @@
 
 - Full Changelog can be found on the Website [here](https://kyutefox.com/changelog/iconify-browser-extension). 
 
-### August 30, 2024 - 1.0.2 (Update)
+### August 07, 2024 - 1.0.6 (Update)
+
+> - Update:
+
+    - Fixed 0 Byte in IconScout
+
+
+### August 30, 2023 - 1.0.2 (Update)
 
 > - New:
 
@@ -14,7 +21,7 @@
 
     - Generate Premium Font Awesome CDN and use icon directly
 
-### August 09, 2024, 1.0.1 (Update & Fixes)
+### August 09, 2023, 1.0.1 (Update & Fixes)
 
 > - New:
 

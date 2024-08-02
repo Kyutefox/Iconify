@@ -58,10 +58,18 @@ const initFontAwesome = () => {
 }
 
 // Create download
-const downloadIcon = function (text = "", downloadAbleName = "", extension = "svg")
+const downloadIcon = function (text = "", downloadAbleName = "", extension = "svg",drc = false)
 {
     let newAnchorElement = document.createElement("a");
-    newAnchorElement.setAttribute("href", "data:text/plain;charset=utf-8," + encodeURIComponent(text));
+    if(drc === true)
+    {
+        newAnchorElement.setAttribute("href", text);
+
+    }else
+    {
+        newAnchorElement.setAttribute("href", "data:text/plain;charset=utf-8," + encodeURIComponent(text));
+
+    }
     newAnchorElement.setAttribute("download", (downloadAbleName + `.${extension}`) ?? "iconify.svg");
     newAnchorElement.style.display = "none";
     document.body.appendChild(newAnchorElement);
@@ -323,7 +331,7 @@ $(document).on("click", ".download-icon, .copyToClipboardIScout", function(e){
         let pdpLottieEditor     =   $(document).find("#pdp-lottie-player-"  + product_id);
         if(propColorEditor.length > 0)
         {
-            downloadIcon(propColorEditor.html(), product_id);
+            downloadIcon(propColorEditor.attr("src"), product_id,"svg",true);
             clickedButtonElement.html("Download");
         }
         else if(pdpLottieEditor.length > 0)
