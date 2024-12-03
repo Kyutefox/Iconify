@@ -4,6 +4,14 @@
 
 - Full Changelog can be found on the Website [here](https://kyutefox.com/changelog/iconify-browser-extension). 
 
+### December 03, 2024 - 1.0.7 (Update)
+> - Update:
+
+    - Updated with new bypass method for IconScout
+    - Fixed IconScout Not Downloading SVG [ both free and premium ]
+    - Fixed 3D Icon Download in IconScout
+    - Fixed IconScout Not Download Lottie [ both free and premium ]
+
 ### August 07, 2024 - 1.0.6 (Update)
 
 > - Update:

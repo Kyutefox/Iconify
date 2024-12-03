@@ -189,7 +189,7 @@ In conclusion, Iconify is a safe and secure extension that provides premium SVG 
 
 ## 📃 Changelog
 
-- Full Changelog can be found on the Website [here](https://kyutefox.com/changelog/iconify-browser-extension) or in the [Changelog file](https://github.com/Zemerik/Iconify/blob/main/CHANGELOG.md)
+- Full Changelog can be found on the Website [here](https://kyutefox.com/changelog/iconify-browser-extension) or in the [Changelog file](https://github.com/Kyutefox/Iconify/blob/main/CHANGELOG.md)
 
 ## 🔗 Useful Links
 

@@ -11,6 +11,10 @@ const styleElement = document.createElement("style");
 styleElement.textContent = snackbarStyle + bounceCss;
 document.head.appendChild(styleElement);
 
+
+
+let iconScoutModeIdentification;
+
 const initButtonFae = () => {
     // Create the button element
    const button = $('<span>', {
@@ -189,19 +193,27 @@ window.addEventListener("load", function (){
         let iconScoutPremiumDownloadButton =
             $(`<button type="button" class="btn btn-primary has-icon w-100 btn-lg download-icon">Download</button>`).text("Download").removeAttr("href");
 
-        const button = $("button[class*='btn'][class*='dropdown-toggle'][class*='btn-primary'][class*='w-100'][class*='btn-lg'][class*='has-icon'][class*='dropdown-toggle-no-caret']");
-        const button2 = $("#modalItemPreview main").find("button[class='btn btn-primary has-icon w-100 btn-lg']");
-        button.next("ul").remove();
-        if(button)
-        {
-            button.replaceWith(iconScoutPremiumDownloadButton);
+        // const button = $(".modal-body main").find("button[class*='btn'][class*='dropdown-toggle'][class*='btn-primary'][class*='w-100'][class*='btn-lg'][class*='has-icon'][class*='action_H7qtc']");
+        const button2 = $(".modal-body main").find("button[class='btn btn-primary has-icon w-100 btn-lg action_H7qtc']");
+        const button3 = $(".modal-body main").find("button[class='btn btn-primary w-100 btn-lg action_rM0Z2']");
 
-        }
-        else
-        {
+
+        // const button = $("button[class='action_H7qtc']").remove();
+        // console.log(button);
+        // console.log(button2);
+
+        // button.next("ul").remove();
+        // if(button)
+        // {
+        //     button.replaceWith(iconScoutPremiumDownloadButton);
+        //
+        // }
+        // else
+        // {
             button2.replaceWith(iconScoutPremiumDownloadButton);
-
-        }
+            button3.replaceWith(iconScoutPremiumDownloadButton);
+        //
+        // }
     });
 
     // Options for the observer (which mutations to observe)
@@ -331,7 +343,17 @@ $(document).on("click", ".download-icon, .copyToClipboardIScout", function(e){
         let pdpLottieEditor     =   $(document).find("#pdp-lottie-player-"  + product_id);
         if(propColorEditor.length > 0)
         {
-            downloadIcon(propColorEditor.attr("src"), product_id,"svg",true);
+            let token = extractTokenFromUrls(product_id);
+            if(token)
+            {
+                fetch(token).then( response => response.text() ).then( data => {
+                    if(data)
+                    {
+                        downloadIcon(data, product_id, "svg", false);
+                        clickedButtonElement.html("Download");
+                    }
+                })
+            }
             clickedButtonElement.html("Download");
         }
         else if(pdpLottieEditor.length > 0)
@@ -345,10 +367,11 @@ $(document).on("click", ".download-icon, .copyToClipboardIScout", function(e){
             }
             else
             {
-                let token = extractTokenFromUrls()[0];
+                let token = extractTokenFromUrls(product_id);
+                console.log(token)
                 if(token)
                 {
-                    fetch(`https://d3cb3akjtc97pv.cloudfront.net/lottie/premium/original/${product_id}.json?token=${token}`).then( response => response.json() ).then( data => {
+                    fetch(token).then( response => response.json() ).then( data => {
                         if(data)
                         {
                             downloadJson(data, product_id);
@@ -391,13 +414,25 @@ $(document).on("click", ".download-icon, .copyToClipboardIScout", function(e){
 
 
 // Extract Token
-function extractTokenFromUrls() {
+function extractTokenFromUrls(product_id) {
     let entries = window.performance.getEntries();
-    return entries.filter(entry => entry.initiatorType === 'xmlhttprequest' || entry.initiatorType === 'fetch').filter(entry => entry.name.includes('?token=')).map(entry => {
-        let url = new URL(entry.name);
-        return url.searchParams.get('token');
-    }) ?? [];
+
+    // Filter the entries that are either xmlhttprequest or fetch, and contain '?token=' in the URL
+    let filteredEntries = entries.filter(entry =>
+        (entry.initiatorType === 'xmlhttprequest' || entry.initiatorType === 'fetch') &&
+        entry.name.includes('?token=') &&
+        entry.name.includes(product_id)
+    );
+
+    // If there are any filtered entries, get the last one and extract the token
+    if (filteredEntries.length > 0) {
+        let lastEntry = filteredEntries[filteredEntries.length - 1];
+        return lastEntry.name;
+    }
+
+    return null;
 }
+
 
 // Download SVG from Flaticon
 $(document).on("click", ".btn-svg, .copysvg--button", function(e){
