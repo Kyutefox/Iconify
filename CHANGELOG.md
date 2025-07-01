@@ -4,6 +4,12 @@
 
 - Full Changelog can be found on the Website [here](https://kyutefox.com/changelog/iconify-browser-extension). 
 
+### July 01, 2025 - 1.0.8 (Update)
+> - Update:
+
+    - Fixed Icons8 Not Downloading SVG [ both free and premium ]
+
+
 ### December 03, 2024 - 1.0.7 (Update)
 > - Update:
 

@@ -162,6 +162,7 @@ window.addEventListener("load", function (){
         });
 
         // flaticon
+        // flaticon
         if($(document).find("#gr_user_menu_avatar").length > 0)
         {
             let userAccount = $(document).find("#gr_user_menu_avatar").find("img").attr("alt");
@@ -180,40 +181,38 @@ window.addEventListener("load", function (){
             USER.active_on  = "icons8";
         }
 
-        // iconscout
-        if($(document).find(".userProfile_UGnys h3").length > 0)
-        {
+
+        if ($(document).find(".userProfile_UGnys h3").length > 0) {
             let userAccount = $(document).find(".userProfile_UGnys h3").text();
             USER.logged_in  = true;
             USER.id         = userAccount;
             USER.active_on  = "iconscout";
+
+            // Start watching for the modal when on Iconscout
+            const iconScoutButtonObserver = new MutationObserver((mutations, obs) => {
+                const modal = document.querySelector("#modalItemPreview");
+                if (modal) {
+                    const button2   = modal.querySelector("button.btn.btn-primary.has-icon.w-100.btn-lg.action_H7qtc");
+                    const button3   = modal.querySelector("button.btn.btn-primary.w-100.btn-lg.action_rM0Z2");
+
+                    const newButton = `<button type="button" class="btn btn-primary has-icon w-100 btn-lg download-icon">Download</button>`;
+
+                    if (button2 && !button2.classList.contains("download-icon")) {
+                        button2.replaceWith($(newButton).clone(true)[0]);
+                    }
+
+                    if (button3 && !button3.classList.contains("download-icon")) {
+                        button3.replaceWith($(newButton).clone(true)[0]);
+                    }
+                }
+            });
+
+            // Watch the entire body for when the modal is injected
+            iconScoutButtonObserver.observe(document.body, {
+                childList: true,
+                subtree: true,
+            });
         }
-
-        // Replace the download button with SVG download button in Iconscout
-        let iconScoutPremiumDownloadButton =
-            $(`<button type="button" class="btn btn-primary has-icon w-100 btn-lg download-icon">Download</button>`).text("Download").removeAttr("href");
-
-        // const button = $(".modal-body main").find("button[class*='btn'][class*='dropdown-toggle'][class*='btn-primary'][class*='w-100'][class*='btn-lg'][class*='has-icon'][class*='action_H7qtc']");
-        const button2 = $(".modal-body main").find("button[class='btn btn-primary has-icon w-100 btn-lg action_H7qtc']");
-        const button3 = $(".modal-body main").find("button[class='btn btn-primary w-100 btn-lg action_rM0Z2']");
-
-
-        // const button = $("button[class='action_H7qtc']").remove();
-        // console.log(button);
-        // console.log(button2);
-
-        // button.next("ul").remove();
-        // if(button)
-        // {
-        //     button.replaceWith(iconScoutPremiumDownloadButton);
-        //
-        // }
-        // else
-        // {
-            button2.replaceWith(iconScoutPremiumDownloadButton);
-            button3.replaceWith(iconScoutPremiumDownloadButton);
-        //
-        // }
     });
 
     // Options for the observer (which mutations to observe)
@@ -225,13 +224,22 @@ window.addEventListener("load", function (){
         '<button class="download-svg-ry i8-button--primary i8-button--large i8-button">' +
         '<div class="i8-icon i8-button__icon i8-button__icon--left i8-button__icon i8-button__icon--left" style="--icon-size: 24px;"><svg class="i8-icon-path" preserveAspectRatio="none"><path d="M11.9883 2.98935C11.7896 2.99245 11.6002 3.07432 11.4617 3.21696C11.3233 3.35959 11.2472 3.55135 11.25 3.75009V14.4395L9.53029 12.7198C9.46038 12.6478 9.37674 12.5906 9.28431 12.5515C9.19188 12.5124 9.09255 12.4923 8.9922 12.4923C8.84294 12.4923 8.69709 12.5369 8.5733 12.6203C8.44951 12.7037 8.35342 12.8221 8.29731 12.9604C8.24121 13.0987 8.22765 13.2507 8.25837 13.3967C8.28908 13.5428 8.36268 13.6764 8.46974 13.7804L11.4697 16.7804C11.6104 16.921 11.8011 16.9999 12 16.9999C12.1989 16.9999 12.3896 16.921 12.5303 16.7804L15.5303 13.7804C15.6023 13.7113 15.6597 13.6285 15.6993 13.5369C15.7389 13.4453 15.7598 13.3467 15.7608 13.2469C15.7619 13.1472 15.7429 13.0482 15.7052 12.9558C15.6675 12.8634 15.6117 12.7795 15.5412 12.7089C15.4706 12.6384 15.3867 12.5826 15.2943 12.5449C15.2019 12.5072 15.103 12.4883 15.0032 12.4893C14.9034 12.4903 14.8048 12.5112 14.7132 12.5508C14.6216 12.5904 14.5389 12.6478 14.4697 12.7198L12.75 14.4395V3.75009C12.7515 3.64971 12.7327 3.55006 12.6949 3.45705C12.6572 3.36403 12.6011 3.27955 12.5301 3.20861C12.459 3.13767 12.3745 3.0817 12.2814 3.04404C12.1884 3.00638 12.0887 2.98778 11.9883 2.98935ZM3.7383 15.4893C3.53956 15.4925 3.35017 15.5743 3.21174 15.717C3.07332 15.8596 2.99717 16.0513 3.00002 16.2501V18.2501C3.00002 19.76 4.24013 21.0001 5.75002 21.0001H18.25C19.7599 21.0001 21 19.76 21 18.2501V16.2501C21.0014 16.1507 20.9831 16.052 20.946 15.9598C20.9089 15.8676 20.8539 15.7836 20.7841 15.7129C20.7144 15.6421 20.6312 15.5859 20.5395 15.5475C20.4478 15.5092 20.3494 15.4894 20.25 15.4894C20.1506 15.4894 20.0522 15.5092 19.9605 15.5475C19.8688 15.5859 19.7857 15.6421 19.7159 15.7129C19.6461 15.7836 19.5911 15.8676 19.554 15.9598C19.517 16.052 19.4986 16.1507 19.5 16.2501V18.2501C19.5 18.9492 18.9491 19.5001 18.25 19.5001H5.75002C5.0509 19.5001 4.50002 18.9492 4.50002 18.2501V16.2501C4.50146 16.1497 4.48273 16.0501 4.44495 15.957C4.40717 15.864 4.3511 15.7796 4.28006 15.7086C4.20903 15.6377 4.12447 15.5817 4.03141 15.544C3.93835 15.5064 3.83868 15.4878 3.7383 15.4893Z" style="height: 100%;"></path></svg></div>Iconify Download SVG' +
         '</button>';
-    $(document).on("click", ".app-grid-icon", function (e) {
-        let downloadModalFooterElement  =   $(document).find(".app-accordion2__main-buttons");
-        let existingButton              =   $(document).find(".download-svg-ry");
-        if(existingButton.length < 1)
-        {
-            downloadModalFooterElement.prepend(icons8DownloadButton)
-        }
+
+    $(document).on("click", ".app-grid-icon", function () {
+        const observer = new MutationObserver((mutations, obs) => {
+            const downloadModalFooterElement = document.querySelector(".app-accordion2__main-buttons");
+            const existingButton = document.querySelector(".download-svg-ry");
+
+            if (downloadModalFooterElement && !existingButton) {
+                downloadModalFooterElement.insertAdjacentHTML('afterbegin', icons8DownloadButton);
+                obs.disconnect(); // Stop observing once inserted
+            }
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
     });
 
     // Download SVG from Fontawesome
@@ -260,31 +268,19 @@ window.addEventListener("load", function (){
         try
         {
             let clickedButtonElement    =   $(this);
-            let idElement               =   $(document).find(".i8-link.app-accordion2__name.app-accordion2__name");
-            let str                   =   idElement.attr("href");
+            let idElement               =   $(document).find(".app-grid-icon--is-active");
+            let str                     =   idElement.attr("data-icon");
             if(str)
             {
-
-                let value;
-                const regex = /\/icon\/([^\/]+)/;
-                const match = str.match(regex);
-
-                if (match) {
-                     value = match[1];
-                } else {
-                    value = "";
-                }
-                if(value)
-                {
                     $.ajax({
-                        url         :   `https://api-icons.icons8.com/siteApi/icons/icon?id=${value}&info=true&language=en-US&svg=true`,
+                        url         :   `https://api-icons.icons8.com/siteApi/icons/icon?id=${str}&info=true&language=en-US&svg=true`,
                         method      :   "GET",
                         dataType    :   "JSON",
                         beforeSend  :   function (){
                             clickedButtonElement.html(LOADING_ICON);
                         },
                         success     :   function (response){
-                            const iconName  = response.icon.name    ?? value;
+                            const iconName  = response.icon.name    ?? str;
                             const svg       = response.icon.svg     ?? "";
                             if(svg.length > 0)
                             {
@@ -298,7 +294,6 @@ window.addEventListener("load", function (){
                         }
                     })
                 }
-            }
         }
         catch(e)
         {
