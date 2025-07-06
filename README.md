@@ -1,6 +1,6 @@
 <div align = "center">
 
-<img src="https://cdn.kyutefox.com/Kyutefox/svg/Fox.svg" alt="Logo" height="225px" width="225px">
+<img src="https://cdn.kyutefox.com/Kyutefox/svg/Fox.svg" alt="Logo" height="150px" width="150px">
 
 <h1>👋 Welcome to Iconify</h1>
 
